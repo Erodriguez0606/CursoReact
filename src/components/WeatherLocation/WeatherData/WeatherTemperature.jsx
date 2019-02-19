@@ -15,14 +15,24 @@ const icons = {
 
 const getWheaterIcon = (weatherState)=>{
     const icon = icons[weatherState]
-    return (icon)?<WeatherIcons name={icon} size="2x"/>:<WeatherIcons name={"sunny-day"} size="2x"/>;
+
+    const sizeIcon = '4x';
+
+    return (icon)?<WeatherIcons name={icon} className={'wicon'} size={sizeIcon}/>:
+    <WeatherIcons name={"sunny-day"} className={''} size={sizeIcon}/>;
 };
 
 const  WeatherTemperature = ({temperature, weatherState}) => (
 
-    <div>
+    <div className={'weatherTemperatureCont'}>
         {getWheaterIcon(weatherState)}
-        <span>{`${temperature}°C`}</span></div>
+        <span className={'temperature'}>
+            {`${temperature}`}
+        </span>
+        <span className={'temperatureType'}>
+            {` °C`} 
+        </span>
+    </div>
 );
 
 WeatherTemperature.propTypes = {
