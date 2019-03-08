@@ -13,6 +13,9 @@ const getUrlWeatherByCity = city =>{
         case 'Tlalpan':
         locationID = '3515428';
         break;
+        case 'Culiacan':
+        locationID = '4012176';
+        break;
         // no default
     }
 
